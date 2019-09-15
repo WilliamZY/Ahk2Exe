@@ -36,10 +36,10 @@ AhkCompile(ByRef AhkFile, ExeFile="", ByRef CustomIcon="", BinFile="", UseMPRESS
 	
 	BundleAhkScript(ExeFileTmp, AhkFile, CustomIcon, fileCP)
 	
-	if FileExist(A_ScriptDir "\mpress.exe") && UseMPRESS
+	if FileExist(A_ScriptDir "\upx.exe") && UseMPRESS
 	{
 		Util_Status("Compressing final executable...")
-		RunWait, "%A_ScriptDir%\mpress.exe" -q -x "%ExeFileTmp%",, Hide
+		RunWait, "%A_ScriptDir%\upx.exe" -9 -q "%ExeFileTmp%",, Hide
 	}
 	
 	; the final step...
